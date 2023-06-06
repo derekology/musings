@@ -5,8 +5,8 @@ import App from '@/App.vue'
 import router from '@/router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
-import '@dbetka/vue-material-icons/dist/index.css'
 import { createHead } from "@unhead/vue"
+import '@dbetka/vue-material-icons/dist/index.css'
 import materialIcons from '@dbetka/vue-material-icons'
 
 const app = createApp(App)
