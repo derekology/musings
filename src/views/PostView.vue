@@ -22,7 +22,7 @@ import { useHead } from '@unhead/vue'
 import SinglePostHeader from "@/components/singlepost/SinglePostHeader.vue";
 import SinglePostContent from "@/components/singlepost/SinglePostContent.vue";
 import ContentLoader from "@/components/global/ContentLoader.vue";
-import StackedLogo from "@/components/global/LogoStacked.vue";
+import StackedLogo from "@/components/global/LogoHorizontalDark.vue";
 
 export default defineComponent({
   name: "PostView",
