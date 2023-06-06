@@ -14,6 +14,10 @@ const router = createRouter({
       name: "posts",
       component: () => import("@/views/PostView.vue"),
     },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
+    }
   ]
 })
 
