@@ -9,9 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BButton: typeof import('bootstrap-vue-next')['BButton']
-    BNav: typeof import('bootstrap-vue-next')['BNav']
-    BNavItem: typeof import('bootstrap-vue-next')['BNavItem']
     BOffcanvas: typeof import('bootstrap-vue-next')['BOffcanvas']
     ContentLoader: typeof import('./src/components/global/ContentLoader.vue')['default']
     HorizontalMenu: typeof import('./src/components/nav/HorizontalMenu.vue')['default']
