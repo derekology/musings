@@ -1,0 +1,9 @@
+@import './base.css';
+
+.trim-top {
+  border-top: 5px var(--vt-c-trim) solid;
+}
+
+.trim-left {
+  border-left: 5px var(--vt-c-trim) solid;
+}
