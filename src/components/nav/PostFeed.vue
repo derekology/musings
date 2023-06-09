@@ -22,6 +22,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import ContentLoader from "@/components/global/ContentLoader.vue";
+import wpconfig from '@/wpconfig';
 
 export default defineComponent({
   name: "PostFeed",
@@ -44,7 +45,7 @@ export default defineComponent({
   methods: {
     getPosts: function () {
       const getPostsURL =
-        "https://api.derekw.co/wp-json/wp/v2/posts?per_page=100&orderby=date&order=desc&status=publish&_fields[]=id&_fields[]=slug&_fields[]=title&_fields[]=acf&_fields[]=date&_fields[]=categories";
+        `${wpconfig.wordpressEndpoint}/posts?per_page=100&orderby=date&order=desc&status=publish&_fields[]=id&_fields[]=slug&_fields[]=title&_fields[]=acf&_fields[]=date&_fields[]=categories`;
 
       const fetchPosts = fetch(getPostsURL)
         .then((response) => response.json())

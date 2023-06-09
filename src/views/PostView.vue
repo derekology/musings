@@ -23,6 +23,7 @@ import SinglePostHeader from "@/components/singlepost/SinglePostHeader.vue";
 import SinglePostContent from "@/components/singlepost/SinglePostContent.vue";
 import ContentLoader from "@/components/global/ContentLoader.vue";
 import StackedLogo from "@/components/global/LogoHorizontalDark.vue";
+import wpconfig from '@/wpconfig';
 
 export default defineComponent({
   name: "PostView",
@@ -70,7 +71,7 @@ export default defineComponent({
     getPost: function () {
       this.getPageSlug();
 
-      const getPostURL = `https://api.derekw.co/wp-json/wp/v2/posts?per_page=1&slug=${this.pageSlug}&status=publish&_fields[]=yoast_head_json&_fields[]=title&_fields[]=acf&_fields[]=content&_fields[]=date&_fields[]=categories&_fields[]=slug`;
+      const getPostURL = `${wpconfig.wordpressEndpoint}/posts?per_page=1&slug=${this.pageSlug}&status=publish&_fields[]=yoast_head_json&_fields[]=title&_fields[]=acf&_fields[]=content&_fields[]=date&_fields[]=categories&_fields[]=slug`;
 
       const fetchPost = fetch(getPostURL)
         .then((response) => response.json())
