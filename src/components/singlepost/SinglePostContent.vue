@@ -11,7 +11,10 @@ export default defineComponent({
   name: "SinglePostContent",
 
   props: {
-    content: String,
+    content: {
+      type: String,
+      required: true,
+    }
   },
 });
 </script>
