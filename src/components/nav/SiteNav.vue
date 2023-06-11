@@ -1,12 +1,15 @@
 <template>
     <div id="mobile-menu" class="d-md-none">
-        <b-offcanvas class="bg-dark" v-model="offcanvasShow">
+        <b-offcanvas class="bg-dark" id="mobile-offcanvas" v-model="offcanvasShow" title="Newest Posts" placement="bottom">
             <nav class="overflow-scroll">
                 <PostFeed />
             </nav>
         </b-offcanvas>
-        <div class="navbar bg-dark trim-top fixed-top w-100 p-3 justify-content-between top-0">
-            <material-icon class="material-icon" name="menu" v-on:click="click" />
+        <div class="navbar bg-dark trim-top fixed-bottom w-100 p-3 justify-content-between bottom-0">
+            <material-icon class="material-icon" name="menu" v-on:click="click(); menuClicked = !menuClicked"
+                v-show="!menuClicked" />
+            <material-icon class="material-icon" name="close" v-on:click="click(); menuClicked = !menuClicked"
+                v-show="menuClicked" />
             <div class="header-logo">
                 <router-link to="/" class="nav-link" aria-current="page">
                     <HorizontalLogo />
@@ -47,13 +50,19 @@ export default defineComponent({
         HorizontalMenu,
     },
 
+    data() {
+        return {
+            menuClicked: false,
+        };
+    },
+
     setup() {
         /**
          * Set up Bootstrap offcanvas.
          */
         const offcanvasShow = ref(false)
-        const click = () => {
-            offcanvasShow.value = !offcanvasShow.value
+        const click = (): void => {
+            offcanvasShow.value = !offcanvasShow.value;
         }
 
         return {
@@ -67,6 +76,7 @@ export default defineComponent({
 <style scoped>
 .navbar {
     height: 75px;
+    z-index: 9999;
 }
 
 .material-icon {
