@@ -44,7 +44,7 @@ export default defineComponent({
       postContent: "" as string,
       postImage: "" as string,
       postPublished: "" as string,
-      postCategories: "" as string,
+      postCategories: [] as number[],
       yoastData: {} as Record<string, any>,
     };
   },
@@ -64,33 +64,35 @@ export default defineComponent({
   },
 
   methods: {
-    getPageSlug: function () {
+    getPageSlug: function (): void {
       this.pageSlug = window.location.pathname.replace("/", "");
     },
 
-    getPost: function () {
+    getPost: function (): void | Promise<void> {
       this.getPageSlug();
 
       const getPostURL = `${wpconfig.wordpressEndpoint}/posts?per_page=1&slug=${this.pageSlug}&status=publish&_fields[]=yoast_head_json&_fields[]=title&_fields[]=acf&_fields[]=content&_fields[]=date&_fields[]=categories&_fields[]=slug`;
 
+      console.log(getPostURL)
+
       const fetchPost = fetch(getPostURL)
-        .then((response) => response.json())
-        .then((data) => {
+        .then((response): Promise<any> => response.json())
+        .then((data): Record<string, any> => {
           return data;
         });
 
       const parsePost = async () => {
         const res = await fetchPost;
 
-        this.yoastData = JSON.parse(JSON.stringify(res[0]["yoast_head_json"]));
-        this.postSlug = res[0]["slug"];
+        this.yoastData = JSON.parse(JSON.stringify(res[0]["yoast_head_json"])) as Record<string, any>;
+        this.postSlug = res[0]["slug"] as string;
 
-        this.postTitle = res[0]["title"]["rendered"];
-        this.postSubtitle = res[0]["acf"]["subtitle"];
-        this.postContent = res[0]["content"]["rendered"];
-        this.postImage = this.yoastData["og_image"][0]["url"];
-        this.postPublished = res[0]["date"];
-        this.postCategories = res[0]["categories"];
+        this.postTitle = res[0]["title"]["rendered"] as string;
+        this.postSubtitle = res[0]["acf"]["subtitle"] as string;
+        this.postContent = res[0]["content"]["rendered"] as string;
+        this.postImage = this.yoastData["og_image"][0]["url"] as string;
+        this.postPublished = res[0]["date"] as string;
+        this.postCategories = res[0]["categories"] as number[];
       };
 
       parsePost();
