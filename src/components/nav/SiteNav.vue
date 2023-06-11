@@ -2,7 +2,7 @@
     <div id="mobile-menu" class="d-md-none">
         <b-offcanvas class="bg-dark" id="mobile-offcanvas" v-model="offcanvasShow" title="Newest Posts" placement="bottom">
             <nav class="overflow-scroll">
-                <PostFeed v-on:click="click" />
+                <PostFeed v-on:click="click()" />
             </nav>
         </b-offcanvas>
         <div class="navbar bg-dark trim-top fixed-bottom w-100 p-3 justify-content-between bottom-0">
