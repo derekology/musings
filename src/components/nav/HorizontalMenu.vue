@@ -1,7 +1,7 @@
 <template>
   <div class="nav nav-pills flex-row mb-auto">
     <div class="nav-item col px-0 text-center bg-dark">
-      <a href="https://derekw.co/" target="_blank" class="nav-link text-white text-starttext-center ">
+      <a href="https://derekw.co/" target="_blank" class="nav-link text-white text-center ">
         About / Contact <material-icon class="material-icon" name="open_in_new" />
       </a>
     </div>
@@ -29,5 +29,6 @@ a.router-link-exact-active {
 
 a:hover {
   background-color: #ffffff08;
+  text-decoration: none !important;
 }
 </style>
