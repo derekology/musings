@@ -49,11 +49,11 @@ export default defineComponent({
     },
 
     setup() {
-        /**
-         * Set up Bootstrap offcanvas.
-         */
         const offcanvasShow = ref(false)
         const click = (): void => {
+            /**
+             * Toggle offcanvas menu.
+             */
             offcanvasShow.value = !offcanvasShow.value;
         }
 
