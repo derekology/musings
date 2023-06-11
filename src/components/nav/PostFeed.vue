@@ -53,26 +53,20 @@ export default defineComponent({
           return data;
         });
 
-      const processPosts = async () => {
+      const processPosts = async (): Promise<void> => {
         const res = await fetchPosts;
 
         for (let i = 0; i < res.length; i++) {
           const postId = res[i]["id"] as string;
           this.postIdList.push(postId);
 
-          const postSlug = res[i]["slug"];
-          const postTitle = res[i]["title"]["rendered"];
-          const postSubtitle = res[i]["acf"]["subtitle"];
-          const postPublished = res[i]["date"];
-          const postCategories = res[i]["categories"];
-
           this.postList[postId] = {};
-          this.postList[postId]["id"] = postId;
-          this.postList[postId]["slug"] = postSlug;
-          this.postList[postId]["title"] = postTitle;
-          this.postList[postId]["subtitle"] = postSubtitle;
-          this.postList[postId]["published"] = postPublished;
-          this.postList[postId]["categories"] = postCategories;
+          this.postList[postId]["id"] = postId as string;
+          this.postList[postId]["slug"] = res[i]["slug"] as string;
+          this.postList[postId]["title"] = res[i]["title"]["rendered"] as string;
+          this.postList[postId]["subtitle"] = res[i]["acf"]["subtitle"] as string;
+          this.postList[postId]["published"] = res[i]["date"] as string;
+          this.postList[postId]["categories"] = res[i]["categories"] as string;
         }
       };
 
