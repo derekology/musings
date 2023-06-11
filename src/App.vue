@@ -2,7 +2,7 @@
   <header>
     <SiteNav />
   </header>
-  <div id="content" class="d-md-flex flex-row">
+  <div id="content" class="d-md-flex flex-row my-md-0">
     <router-view class="w-100" />
   </div>
 </template>
@@ -34,15 +34,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
+#content {
+  margin-bottom: 75px;
+}
+
 @media screen and (min-width: 768px) {
   #content {
     margin-left: 230px;
-  }
-}
-
-@media (max-width: 767px) {
-  #content {
-    margin-bottom: 75px;
   }
 }
 </style>
