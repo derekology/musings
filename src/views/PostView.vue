@@ -56,10 +56,12 @@ export default defineComponent({
   },
 
   created: function () {
+    scroll(0, 0);
     this.getPost();
   },
 
   beforeUpdate: function () {
+    scroll(0, 0);
     this.getPost();
   },
 
