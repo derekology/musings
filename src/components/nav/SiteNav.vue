@@ -1,6 +1,7 @@
 <template>
     <div id="mobile-menu" class="d-md-none">
-        <b-offcanvas class="bg-dark" id="mobile-offcanvas" v-model="offcanvasShow" title="Newest Posts" placement="bottom">
+        <b-offcanvas class="bg-dark py-3" id="mobile-offcanvas" v-model="offcanvasShow" title="Newest Posts"
+            placement="bottom">
             <nav class="overflow-scroll">
                 <PostFeed v-on:click="click()" />
             </nav>
