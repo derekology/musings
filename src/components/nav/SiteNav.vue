@@ -6,10 +6,10 @@
             </nav>
         </b-offcanvas>
         <div class="navbar bg-dark trim-top fixed-bottom w-100 p-3 justify-content-between bottom-0">
-            <material-icon class="material-icon" name="menu" v-on:click="click(); menuClicked = !menuClicked"
-                v-show="!menuClicked" />
-            <material-icon class="material-icon" name="close" v-on:click="click(); menuClicked = !menuClicked"
-                v-show="menuClicked" />
+            <material-icon class="material-icon" name="menu" v-on:click="click()"
+                v-show="!offcanvasShow" />
+            <material-icon class="material-icon" name="close" v-on:click="click()"
+                v-show="offcanvasShow" />
             <div class="header-logo">
                 <router-link to="/" class="nav-link" aria-current="page">
                     <HorizontalLogo />
@@ -48,12 +48,6 @@ export default defineComponent({
         HorizontalLogo,
         PostFeed,
         HorizontalMenu,
-    },
-
-    data() {
-        return {
-            menuClicked: false,
-        };
     },
 
     setup() {
