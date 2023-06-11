@@ -1,8 +1,8 @@
 <template>
   <div>
-    <main id="post-header" class="vh-100" :style="{
+    <main id="post-header" :style="{
       'background-image': `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
-                                                                                                                                                                                                                url('${imageUrl}')`,
+                                                                                                                                                                                                                            url('${imageUrl}')`,
     }">
       <div id="top" class="d-flex justify-content-center m-auto p-5 text-center h-100 align-items-end">
         <div>
@@ -69,6 +69,16 @@ export default defineComponent({
   #top #title {
     font-size: 3vw;
     letter-spacing: 10px;
+  }
+
+  #top #post-header {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 767px) {
+  #top #post-header {
+    height: calc(100vh - 75px);
   }
 }
 </style>
