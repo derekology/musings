@@ -12,7 +12,6 @@ declare module 'vue' {
     HorizontalMenu: typeof import('./src/components/nav/HorizontalMenu.vue')['default']
     LogoHorizontal: typeof import('./src/components/global/LogoHorizontal.vue')['default']
     LogoHorizontalDark: typeof import('./src/components/global/LogoHorizontalDark.vue')['default']
-    LogoStacked: typeof import('./src/components/global/LogoStacked.vue')['default']
     PostFeed: typeof import('./src/components/nav/PostFeed.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
