@@ -1,5 +1,5 @@
 <template>
-  <main class="justify-content-center d-flex vh-100 flex-column m-auto">
+  <main class="justify-content-center d-flex flex-column m-auto">
     <div id="title" class="text-center">
       <span id="main-desc" class="fw-bold">Welcome to ::musings!</span>
     </div>
@@ -28,6 +28,7 @@ export default defineComponent({
 <style scoped>
 main {
   max-width: 85%;
+  height: calc(100vh - 75px);
   width: 800px !important;
   color: var(--vt-c-black-soft);
 }
@@ -35,5 +36,11 @@ main {
 div#title {
   font-size: 1.75rem;
   line-height: 2.2em;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    height: 100vh !important;
+  }
 }
 </style>
