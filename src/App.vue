@@ -39,4 +39,10 @@ export default defineComponent({
     margin-left: 230px;
   }
 }
+
+@media (max-width: 767px) {
+  #content {
+    margin-bottom: 75px;
+  }
+}
 </style>
