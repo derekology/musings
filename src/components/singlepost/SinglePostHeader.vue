@@ -2,7 +2,7 @@
   <div>
     <main id="post-header" :style="{
       'background-image': `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
-                                                                                                                                                                                                                            url('${imageUrl}')`,
+                                                                                                                                                                                                                                  url('${imageUrl}')`,
     }">
       <div id="top" class="d-flex justify-content-center m-auto p-5 text-center h-100 align-items-end">
         <div>
@@ -45,7 +45,7 @@ export default defineComponent({
 
 <style scoped>
 #post-header {
-  background: rgb(0, 0, 0);
+  background: #222222;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
