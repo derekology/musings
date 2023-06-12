@@ -120,3 +120,15 @@ a {
 a:hover {
   text-decoration: underline!important;
 }
+
+blockquote {
+  margin: 2em 1em!important;
+  padding: 0 20px;
+  border-left: #dd3333 5px solid;
+  font-size: larger;
+}
+
+blockquote cite {
+  font-size: small;
+  font-style: italic;
+}
