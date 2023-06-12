@@ -75,8 +75,6 @@ export default defineComponent({
 
       const getPostURL = `${wpconfig.wordpressEndpoint}/posts?per_page=1&slug=${this.pageSlug}&status=publish&_fields[]=yoast_head_json&_fields[]=title&_fields[]=acf&_fields[]=content&_fields[]=date&_fields[]=categories&_fields[]=slug`;
 
-      console.log(getPostURL)
-
       const fetchPost = fetch(getPostURL)
         .then((response): Promise<any> => response.json())
         .then((data): Record<string, any> => {
