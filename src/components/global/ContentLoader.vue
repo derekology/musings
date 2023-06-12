@@ -24,6 +24,9 @@ export default defineComponent({
 
   methods: {
     showErrorMsgAfter10Secs: function () {
+      /**
+       * Show error message in loader after 10 seconds.
+       */
       setTimeout(() => {
         this.displayErrorMsg = true;
       }, 10000);

@@ -82,6 +82,9 @@ export default defineComponent({
         });
 
       const parsePost = async () => {
+        /**
+         * Parse post data from WordPress API.
+         */
         const res = await fetchPost;
 
         this.yoastData = JSON.parse(JSON.stringify(res[0]["yoast_head_json"])) as Record<string, any>;

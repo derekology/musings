@@ -44,7 +44,10 @@ export default defineComponent({
 
   methods: {
     getPosts: function () {
-      const getPostsURL =
+      /**
+       * Get all posts from WordPress API.
+       */
+      const getPostsURL: string =
         `${wpconfig.wordpressEndpoint}/posts?per_page=100&orderby=date&order=desc&status=publish&_fields[]=id&_fields[]=slug&_fields[]=title&_fields[]=acf&_fields[]=date&_fields[]=categories`;
 
       const fetchPosts = fetch(getPostsURL)
@@ -54,6 +57,9 @@ export default defineComponent({
         });
 
       const processPosts = async (): Promise<void> => {
+        /**
+         * Process posts and add its data to postList.
+         */
         const res = await fetchPosts;
 
         for (let i = 0; i < res.length; i++) {
