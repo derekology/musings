@@ -76,7 +76,7 @@ export default defineComponent({
 
 <style scoped>
 .primary {
-	fill: var(--color-heading);
+	fill: var(--vt-c-text-dark-1);
 }
 
 .trim {

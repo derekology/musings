@@ -76,7 +76,7 @@ export default defineComponent({
 
 <style scoped>
 .primary {
-	fill: var(--color-background-soft);
+	fill: var(--vt-c-black-soft);
 }
 
 .trim {

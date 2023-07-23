@@ -110,6 +110,6 @@ export default defineComponent({
 }
 
 #load svg .primary {
-  fill: var(--color-background-soft)
+  fill: var(--vt-c-black-soft)
 }
 </style>
