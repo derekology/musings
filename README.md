@@ -6,6 +6,11 @@ The goal of this project is to fine-tune the user experience and customize the p
 
 This project is a work in progress with known bugs and missing functionality.
 
+## To implement
+- Media lightbox
+- Category filters
+- Dark mode
+
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have ideas for new features, please open an issue or submit a pull request.
